@@ -11,6 +11,7 @@ from fastapi.responses import RedirectResponse
 import os
 from pathlib import Path
 from .backend import routers, database
+from .backend.routers import announcements
 
 # Initialize web host
 app = FastAPI(
@@ -33,3 +34,4 @@ def root():
 # Include routers
 app.include_router(routers.activities.router)
 app.include_router(routers.auth.router)
+app.include_router(announcements.router)

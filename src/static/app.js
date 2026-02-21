@@ -865,4 +865,26 @@ document.addEventListener("DOMContentLoaded", () => {
   checkAuthentication();
   initializeFilters();
   fetchActivities();
+
+  // Announcements modal elements
+  const announcementsButton = document.getElementById("announcements-button");
+  const announcementsModal = document.getElementById("announcements-modal");
+  const closeAnnouncementsModal = document.querySelector(".close-announcements-modal");
+
+  // Event listener to open announcements modal
+  announcementsButton.addEventListener("click", () => {
+    announcementsModal.style.display = "block";
+  });
+
+  // Event listener to close announcements modal
+  closeAnnouncementsModal.addEventListener("click", () => {
+    announcementsModal.style.display = "none";
+  });
+
+  // Close modal when clicking outside of it
+  window.addEventListener("click", (event) => {
+    if (event.target === announcementsModal) {
+      announcementsModal.style.display = "none";
+    }
+  });
 });
