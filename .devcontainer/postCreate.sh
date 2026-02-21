@@ -1,3 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+
 # Prepare python environment
 pip install -r requirements.txt
 
